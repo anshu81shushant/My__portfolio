@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anshu Jain - AI/ML Student</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f8f9fa;
+      transition: all 0.4s ease;
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    .dark-mode .card {
+      background: #1e1e1e;
+      border-color: #444;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 0 40px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    .tag {
+      color: #6c757d;
+      font-size: 1.3rem;
+    }
+
+    .typing {
+      color: #0d6efd;
+      font-weight: 500;
+    }
+
+    .links a {
+      color: #0d6efd;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .theme-switch {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      border-bottom: 2px solid #0d6efd;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #0d6efd;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
+
+    .center {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    button.main-btn {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button.main-btn:hover {
+      background: #0b5ed7;
+      transform: translateY(-2px);
+    }
+
+    /* Modal stuff */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal-box {
+      background: white;
+      width: 90%;
+      max-width: 450px;
+      padding: 30px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .dark-mode .modal-box {
+      background: #1e1e1e;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2.5rem;
+      cursor: pointer;
+      color: #777;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    #status {
+      margin-top: 15px;
+      text-align: center;
+      color: #198754;
+      font-weight: bold;
+    }
+
+    #to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #0d6efd;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    #to-top.visible {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      color: #777;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-switch" id="theme">🌙</button>
+
+  <div class="container">
+    <header>
+      <h1>Anshu Jain</h1>
+      <p class="tag">AI & Machine Learning Student 
+        <span class="typing" id="typing"></span>
+      </p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/anshu-jain-884885310" target="_blank">LinkedIn</a> •
+        <a href="https://github.com/anshu81shushant" target="_blank">GitHub</a>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Hey, I'm a student really into AI and Machine Learning.</p>
+      <p>I like playing with data, trying out models, and making small projects. Right now I'm learning more Python stuff for ML, some deep learning basics, and how to mix ML with simple websites.</p>
+      <p>Looking for internships or cool projects where I can actually use what I'm learning.</p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Java</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Machine Learning</span>
+      </div>
+    </div>
+
+    <div class="center">
+      <button class="main-btn" id="openContact">Get in Touch</button>
+    </div>
+
+    <footer>
+      © 2026 Anshu Jain • Still learning, still building
+    </footer>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-bg" id="modal">
+    <div class="modal-box">
+      <span class="close" id="close">&times;</span>
+      <h2>Send me a message</h2>
+      <form id="form">
+        <input type="text" id="yourname" placeholder="Your Name" required>
+        <input type="email" id="youremail" placeholder="Your Email" required>
+        <textarea id="msg" rows="5" placeholder="Hey Anshu..." required></textarea>
+        <button type="submit" class="main-btn">Send</button>
+      </form>
+      <p id="status"></p>
+    </div>
+  </div>
+
+  <button id="to-top">↑</button>
+
+  <script>
+    // Theme switch (save preference)
+    const themeBtn = document.getElementById('theme');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled' || 
+        (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      body.classList.add('dark-mode');
+      themeBtn.textContent = '☀️';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        themeBtn.textContent = '☀️';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        themeBtn.textContent = '🌙';
+      }
+    });
+
+    // Simple typing animation
+    const typing = document.getElementById('typing');
+    const phrases = ["→ making models", "→ learning every day", "→ open for projects"];
+    let i = 0, char = 0, deleting = false;
+
+    function animate() {
+      const text = phrases[i];
+      typing.textContent = text.substring(0, char);
+
+      if (!deleting && char < text.length) {
+        char++;
+        setTimeout(animate, 70);
+      } else if (deleting && char > 0) {
+        char--;
+        setTimeout(animate, 40);
+      } else {
+        deleting = !deleting;
+        if (!deleting) i = (i + 1) % phrases.length;
+        setTimeout(animate, deleting ? 20 : 1500);
+      }
+    }
+    animate();
+
+    // Modal open/close
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('openContact');
+    const closeBtn = document.getElementById('close');
+    const form = document.getElementById('form');
+    const status = document.getElementById('status');
+
+    openBtn.onclick = () => modal.style.display = 'flex';
+    closeBtn.onclick = () => modal.style.display = 'none';
+    modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+    window.onkeydown = e => { if (e.key === 'Escape') modal.style.display = 'none'; };
+
+    form.onsubmit = e => {
+      e.preventDefault();
+      status.textContent = "Thanks! I'll check it out soon.";
+      setTimeout(() => {
+        modal.style.display = 'none';
+        status.textContent = '';
+        form.reset();
+      }, 3000);
+    };
+
+    // Scroll to top button
+    const topBtn = document.getElementById('to-top');
+    window.onscroll = () => {
+      if (window.scrollY > 400) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    };
+    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  </script>
+
+</body>
+</html>
